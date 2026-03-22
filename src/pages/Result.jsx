@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import TopAppBar from "../components/TopAppBar";
 import WalletScoreCard from "../components/WalletScoreCard";
@@ -32,6 +32,7 @@ export default function Result({ roastData, onNavigateHome }) {
   );
   const roastRef = useRef(null);
   const shareCardRef = useRef(null);
+  const [copied, setCopied] = useState(false);
 
   async function handleShare() {
     const promoText =
@@ -39,7 +40,13 @@ export default function Result({ roastData, onNavigateHome }) {
       `"${[headline, accentPhrase, headlineSuffix].filter(Boolean).join(" ")}"\n` +
       `Score: ${roastData?.rating ?? "?"}/10 — ${roastData?.rating_title ?? ""}\n\n` +
       `Get your own wallet roasted 👉 https://dis-ai-pear.vercel.app`;
-    navigator.clipboard.writeText(promoText).catch(() => {});
+    navigator.clipboard
+      .writeText(promoText)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      })
+      .catch(() => {});
     if (!shareCardRef.current) return;
     const dataUrl = await toPng(shareCardRef.current, {
       cacheBust: true,
@@ -88,6 +95,30 @@ export default function Result({ roastData, onNavigateHome }) {
           </div>
         </div>
       </main>
+
+      {/* Copied-to-clipboard toast */}
+      <div
+        aria-live="polite"
+        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-5 py-3 rounded-2xl bg-surface-container text-on-surface shadow-lg text-sm font-medium transition-all duration-300 ${
+          copied
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-4 h-4 text-primary"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Copied to clipboard
+      </div>
 
       {/* Decorative fixed background blobs */}
       <div className="fixed top-0 left-0 -z-10 opacity-20 pointer-events-none">
