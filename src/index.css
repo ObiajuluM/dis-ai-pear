@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- Colors --- */
+  --color-error-dim: #b92902;
+  --color-on-secondary-fixed-variant: #950085;
+  --color-surface-tint: #4f6300;
+  --color-inverse-surface: #0e0e0e;
+  --color-on-surface: #2f2e2e;
+  --color-on-primary: #e2ff82;
+  --color-primary: #4f6300;
+  --color-surface-container-highest: #dfdcdc;
+  --color-surface-variant: #dfdcdc;
+  --color-background: #f9f6f5;
+  --color-outline: #787676;
+  --color-tertiary-fixed-dim: #00deec;
+  --color-tertiary-dim: #00595f;
+  --color-on-surface-variant: #5c5b5b;
+  --color-surface-container-high: #e5e2e1;
+  --color-error: #b02500;
+  --color-on-primary-container: #4b5e00;
+  --color-on-error-container: #520c00;
+  --color-outline-variant: #afacac;
+  --color-primary-fixed: #cefc00;
+  --color-tertiary: #00666d;
+  --color-on-primary-fixed-variant: #546800;
+  --color-inverse-primary: #cefc00;
+  --color-surface-container-lowest: #ffffff;
+  --color-secondary-fixed: #ffbeeb;
+  --color-error-container: #f95630;
+  --color-surface: #f9f6f5;
+  --color-on-secondary-fixed: #640059;
+  --color-surface-container: #eae7e7;
+  --color-primary-fixed-dim: #c1ed00;
+  --color-tertiary-fixed: #00eefc;
+  --color-surface-dim: #d6d4d3;
+  --color-secondary: #a80096;
+  --color-secondary-dim: #940084;
+  --color-inverse-on-surface: #9e9c9c;
+  --color-on-tertiary-container: #005359;
+  --color-secondary-container: #ffbeeb;
+  --color-on-tertiary-fixed-variant: #005e64;
+  --color-surface-bright: #f9f6f5;
+  --color-on-error: #ffefec;
+  --color-primary-dim: #455600;
+  --color-secondary-fixed-dim: #ffa8e7;
+  --color-on-secondary-container: #850077;
+  --color-on-background: #2f2e2e;
+  --color-surface-container-low: #f3f0ef;
+  --color-on-primary-fixed: #3b4a00;
+  --color-primary-container: #cefc00;
+  --color-on-secondary: #ffeef6;
+  --color-tertiary-container: #00eefc;
+  --color-on-tertiary-fixed: #003f43;
+  --color-on-tertiary: #cffbff;
+
+  /* --- Font families --- */
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+
+  /* --- Border radius --- */
+  --radius: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+}
+
+/* Material Symbols variable font settings */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.neon-glow {
+  box-shadow: 0 0 40px -10px rgba(206, 252, 0, 0.3);
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+.neon-gradient-text {
+  background: linear-gradient(135deg, #4f6300 0%, #cefc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.roast-card-shadow {
+  box-shadow: 0 20px 40px -20px rgba(47, 46, 46, 0.05);
+}

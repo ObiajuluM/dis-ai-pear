@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-dim": "#b92902",
+                        "on-secondary-fixed-variant": "#950085",
+                        "surface-tint": "#4f6300",
+                        "inverse-surface": "#0e0e0e",
+                        "on-surface": "#2f2e2e",
+                        "on-primary": "#e2ff82",
+                        "primary": "#4f6300",
+                        "surface-container-highest": "#dfdcdc",
+                        "surface-variant": "#dfdcdc",
+                        "background": "#f9f6f5",
+                        "outline": "#787676",
+                        "tertiary-fixed-dim": "#00deec",
+                        "tertiary-dim": "#00595f",
+                        "on-surface-variant": "#5c5b5b",
+                        "surface-container-high": "#e5e2e1",
+                        "error": "#b02500",
+                        "on-primary-container": "#4b5e00",
+                        "on-error-container": "#520c00",
+                        "outline-variant": "#afacac",
+                        "primary-fixed": "#cefc00",
+                        "tertiary": "#00666d",
+                        "on-primary-fixed-variant": "#546800",
+                        "inverse-primary": "#cefc00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffbeeb",
+                        "error-container": "#f95630",
+                        "surface": "#f9f6f5",
+                        "on-secondary-fixed": "#640059",
+                        "surface-container": "#eae7e7",
+                        "primary-fixed-dim": "#c1ed00",
+                        "tertiary-fixed": "#00eefc",
+                        "surface-dim": "#d6d4d3",
+                        "secondary": "#a80096",
+                        "secondary-dim": "#940084",
+                        "inverse-on-surface": "#9e9c9c",
+                        "on-tertiary-container": "#005359",
+                        "secondary-container": "#ffbeeb",
+                        "on-tertiary-fixed-variant": "#005e64",
+                        "surface-bright": "#f9f6f5",
+                        "on-error": "#ffefec",
+                        "primary-dim": "#455600",
+                        "secondary-fixed-dim": "#ffa8e7",
+                        "on-secondary-container": "#850077",
+                        "on-background": "#2f2e2e",
+                        "surface-container-low": "#f3f0ef",
+                        "on-primary-fixed": "#3b4a00",
+                        "primary-container": "#cefc00",
+                        "on-secondary": "#ffeef6",
+                        "tertiary-container": "#00eefc",
+                        "on-tertiary-fixed": "#003f43",
+                        "on-tertiary": "#cffbff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 40px -10px rgba(206, 252, 0, 0.3);
+        }
+
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body text-on-surface min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="fixed top-0 w-full z-50 px-6 py-4 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <div
+                class="text-2xl font-black text-zinc-900 dark:text-zinc-50 tracking-tighter italic font-['Space_Grotesk'] uppercase">
+                dis-ai-pear
+            </div>
+
+
+        </div>
+        <div class="bg-zinc-100 dark:bg-zinc-900 h-[1px] w-full absolute bottom-0"></div>
+    </header>
+    <main class="flex-grow flex items-center justify-center px-6 pt-32 pb-24 relative overflow-hidden">
+        <!-- Abstract Background Orbs -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px] -z-10"></div>
+        <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary-container/20 rounded-full blur-[100px] -z-10">
+        </div>
+        <!-- Main Roast Card -->
+        <div
+            class="w-full max-w-2xl bg-surface-container-lowest rounded-lg p-8 md:p-12 neon-glow relative overflow-hidden border border-outline-variant/10">
+            <!-- Tonal Background Element -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/10 rounded-bl-[100px] -z-0"></div>
+            <div class="relative z-10">
+                <!-- Label Tag -->
+                <div class="mb-6">
+                    <span
+                        class="font-label text-xs font-bold tracking-widest uppercase text-secondary bg-secondary-container/30 px-3 py-1 rounded-full">
+                        SAY HI 👋
+                    </span>
+                </div>
+                <!-- Headline -->
+                <h1
+                    class="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-on-surface mb-8 leading-[0.9]">
+                    Let's See How Shitty Your Finances Are.
+                </h1>
+                <!-- Form Section -->
+                <div class="space-y-8">
+                    <!-- Wallet Input -->
+                    <div class="space-y-2">
+                        <label class="font-label text-sm font-bold text-on-surface-variant flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm" data-icon="wallet">wallet</span>
+                            WALLET ADDRESS
+                        </label>
+                        <input
+                            class="w-full bg-surface-container-high border-none rounded-xl px-6 py-4 font-body text-lg focus:ring-2 focus:ring-primary-container transition-all placeholder:text-outline/50 outline-none"
+                            placeholder="0x... or Whatever" type="text" />
+                    </div>
+                    <!-- Network Selection -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="font-label text-sm font-bold text-on-surface-variant">NETWORK
+                                SELECTION</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full appearance-none bg-surface-container-high border-none rounded-xl px-6 py-4 font-body focus:ring-2 focus:ring-primary-container outline-none cursor-pointer">
+                                    <option>Ethereum</option>
+                                    <option>Solana</option>
+                                    <option>Base</option>
+                                    <option>Polygon</option>
+                                    <option>Arbitrum</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                    <span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Personality Selection -->
+                    <div class="space-y-4">
+                        <label class="font-label text-sm font-bold text-on-surface-variant">ROAST PERSONALITY /
+                            STYLE</label>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Radio Option 1 -->
+                            <label class="group relative cursor-pointer">
+                                <input checked="" class="peer sr-only" name="personality" type="radio" />
+                                <div
+                                    class="px-6 py-3 rounded-full bg-surface-container border border-outline-variant/20 peer-checked:bg-primary-container peer-checked:text-on-primary-container transition-all group-hover:scale-105">
+                                    <span class="font-label text-sm font-bold">Sassy Celebrity</span>
+                                </div>
+                            </label>
+                            <!-- Radio Option 2 -->
+                            <label class="group relative cursor-pointer">
+                                <input class="peer sr-only" name="personality" type="radio" />
+                                <div
+                                    class="px-6 py-3 rounded-full bg-surface-container border border-outline-variant/20 peer-checked:bg-primary-container peer-checked:text-on-primary-container transition-all group-hover:scale-105">
+                                    <span class="font-label text-sm font-bold">Mean Gen Z</span>
+                                </div>
+                            </label>
+                            <!-- Radio Option 3 -->
+                            <label class="group relative cursor-pointer">
+                                <input class="peer sr-only" name="personality" type="radio" />
+                                <div
+                                    class="px-6 py-3 rounded-full bg-surface-container border border-outline-variant/20 peer-checked:bg-primary-container peer-checked:text-on-primary-container transition-all group-hover:scale-105">
+                                    <span class="font-label text-sm font-bold">British Aristocrat</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Action Button -->
+                    <div class="pt-4">
+                        <button
+                            class="w-full bg-gradient-to-br from-primary to-primary-container py-6 rounded-full text-on-primary font-headline text-2xl font-black uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-primary-container/20 flex items-center justify-center gap-3">
+                            ROAST ME
+                            <span class="material-symbols-outlined text-3xl font-bold"
+                                data-icon="local_fire_department">local_fire_department</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Footer Roast Hint -->
+                <p class="mt-8 text-center font-body text-sm text-outline italic">
+                    The creator is jobless, please hire him :D
+                </p>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+</body>
+
+</html>
