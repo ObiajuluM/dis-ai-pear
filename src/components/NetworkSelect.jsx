@@ -10,7 +10,8 @@ const NETWORKS = [
   },
   { name: "XRPL EVM TESTNET", rpc: "https://rpc.testnet.xrplevm.org/" },
   { name: "CELO TESTNET", rpc: "https://forno.celo-sepolia.celo-testnet.org/" },
-  { name: "BASE TESTNET", rpc: "	https://sepolia.base.org/" },
+  { name: "BASE TESTNET", rpc: "https://sepolia.base.org/" },
+  { name: "ARC TESTNET", rpc: "https://rpc.testnet.arc.network" },
 ];
 
 export default function NetworkSelect({ value, onChange }) {
