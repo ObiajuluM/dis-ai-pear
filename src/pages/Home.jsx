@@ -15,6 +15,7 @@ export default function Home({ onNavigateToResult, onNavigateHome }) {
   const [loading, setLoading] = useState(false);
 
   async function handleRoast() {
+    if (!walletAddress.trim()) return;
     setLoading(true);
     try {
       const data = await postRoast({
