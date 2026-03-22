@@ -63,7 +63,7 @@ export default function RoastContent({
       <div className="mt-12 pt-8 border-t-4 border-surface-container flex flex-col sm:flex-row items-center gap-6">
         <button
           onClick={onShare}
-          className="w-full sm:w-auto px-10 py-5 bg-primary-container text-on-primary-container font-headline font-black uppercase tracking-tighter rounded-full text-lg hover:scale-105 transition-all flex items-center justify-center gap-3"
+          className="w-full sm:w-auto px-10 py-5 bg-primary-container text-on-primary-container font-headline font-black uppercase tracking-tighter rounded-full text-lg hover:scale-105 transition-all flex items-center justify-center gap-3 cursor-pointer"
         >
           <span
             className="material-symbols-outlined"

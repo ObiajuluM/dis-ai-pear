@@ -4,6 +4,7 @@ import TopAppBar from "../components/TopAppBar";
 import WalletScoreCard from "../components/WalletScoreCard";
 import ArchetypeCard from "../components/ArchetypeCard";
 import RoastContent from "../components/RoastContent";
+import ShareCard from "../components/ShareCard";
 
 /** Split a title string into headline / accentPhrase / headlineSuffix by word thirds. */
 function splitTitle(title = "") {
@@ -30,6 +31,7 @@ export default function Result({ roastData, onNavigateHome }) {
     roastData?.title,
   );
   const roastRef = useRef(null);
+  const shareCardRef = useRef(null);
 
   async function handleShare() {
     const promoText =
@@ -38,8 +40,11 @@ export default function Result({ roastData, onNavigateHome }) {
       `Score: ${roastData?.rating ?? "?"}/10 — ${roastData?.rating_title ?? ""}\n\n` +
       `Get your own wallet roasted 👉 https://dis-ai-pear.vercel.app`;
     navigator.clipboard.writeText(promoText).catch(() => {});
-    if (!roastRef.current) return;
-    const dataUrl = await toPng(roastRef.current, { cacheBust: true });
+    if (!shareCardRef.current) return;
+    const dataUrl = await toPng(shareCardRef.current, {
+      cacheBust: true,
+      pixelRatio: 2,
+    });
     const link = document.createElement("a");
     link.download = `dis-ai-pear-roast-${shortWallet(roastData?.wallet_address ?? "wallet")}.png`;
     link.href = dataUrl;
@@ -91,6 +96,19 @@ export default function Result({ roastData, onNavigateHome }) {
       <div className="fixed bottom-0 right-0 -z-10 opacity-10 pointer-events-none">
         <div className="w-150 h-150 bg-secondary-container rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
       </div>
+
+      {/* Hidden share card — only used for screenshot capture */}
+      <ShareCard
+        cardRef={shareCardRef}
+        score={roastData?.rating ?? 0}
+        verdict={roastData?.rating_title ?? ""}
+        archetype={roastData?.wallet_archetype ?? ""}
+        headline={headline}
+        accentPhrase={accentPhrase}
+        headlineSuffix={headlineSuffix}
+        wallet={shortWallet(roastData?.wallet_address ?? "")}
+        body={roastData?.body ?? ""}
+      />
     </div>
   );
 }
