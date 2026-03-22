@@ -98,17 +98,27 @@ export default function Result({ roastData, onNavigateHome }) {
       </div>
 
       {/* Hidden share card — only used for screenshot capture */}
-      <ShareCard
-        cardRef={shareCardRef}
-        score={roastData?.rating ?? 0}
-        verdict={roastData?.rating_title ?? ""}
-        archetype={roastData?.wallet_archetype ?? ""}
-        headline={headline}
-        accentPhrase={accentPhrase}
-        headlineSuffix={headlineSuffix}
-        wallet={shortWallet(roastData?.wallet_address ?? "")}
-        body={roastData?.body ?? ""}
-      />
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          top: "0px",
+          pointerEvents: "none",
+        }}
+      >
+        <ShareCard
+          cardRef={shareCardRef}
+          score={roastData?.rating ?? 0}
+          verdict={roastData?.rating_title ?? ""}
+          archetype={roastData?.wallet_archetype ?? ""}
+          headline={headline}
+          accentPhrase={accentPhrase}
+          headlineSuffix={headlineSuffix}
+          wallet={shortWallet(roastData?.wallet_address ?? "")}
+          body={roastData?.body ?? ""}
+        />
+      </div>
     </div>
   );
 }

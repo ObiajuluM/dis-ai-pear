@@ -41,9 +41,6 @@ export default function ShareCard({
     <div
       ref={cardRef}
       style={{
-        position: "fixed",
-        left: "-9999px",
-        top: 0,
         width: "1200px",
         height: "630px",
         background: bg,
