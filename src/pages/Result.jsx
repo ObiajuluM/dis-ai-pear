@@ -31,16 +31,13 @@ export default function Result({ roastData, onNavigateHome }) {
   );
   const roastRef = useRef(null);
 
-  function handleShare() {
+  async function handleShare() {
     const promoText =
       `🔥 My wallet just got roasted by dis-ai-pear!\n` +
       `"${[headline, accentPhrase, headlineSuffix].filter(Boolean).join(" ")}"\n` +
       `Score: ${roastData?.rating ?? "?"}/10 — ${roastData?.rating_title ?? ""}\n\n` +
       `Get your own wallet roasted 👉 https://dis-ai-pear.vercel.app`;
     navigator.clipboard.writeText(promoText).catch(() => {});
-  }
-
-  async function handleScreenshot() {
     if (!roastRef.current) return;
     const dataUrl = await toPng(roastRef.current, { cacheBust: true });
     const link = document.createElement("a");
@@ -54,7 +51,10 @@ export default function Result({ roastData, onNavigateHome }) {
   }
 
   return (
-    <div className="bg-background font-body text-on-background selection:bg-primary-container min-h-screen">
+    <div
+      ref={roastRef}
+      className="bg-background font-body text-on-background selection:bg-primary-container min-h-screen"
+    >
       <TopAppBar onLogoClick={onNavigateHome} />
 
       <main className="pt-32 pb-24 px-6 max-w-7xl mx-auto">
@@ -71,18 +71,15 @@ export default function Result({ roastData, onNavigateHome }) {
 
           {/* Right column — roast text */}
           <div className="md:col-span-8">
-            <div ref={roastRef}>
-              <RoastContent
-                wallet={shortWallet(roastData?.wallet_address)}
-                headline={headline}
-                accentPhrase={accentPhrase}
-                headlineSuffix={headlineSuffix}
-                paragraphs={[roastData?.body ?? ""]}
-                onShare={handleShare}
-                onScreenshot={handleScreenshot}
-                onRoastAgain={handleRoastAgain}
-              />
-            </div>
+            <RoastContent
+              wallet={shortWallet(roastData?.wallet_address)}
+              headline={headline}
+              accentPhrase={accentPhrase}
+              headlineSuffix={headlineSuffix}
+              paragraphs={[roastData?.body ?? ""]}
+              onShare={handleShare}
+              onRoastAgain={handleRoastAgain}
+            />
           </div>
         </div>
       </main>

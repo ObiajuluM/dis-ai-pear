@@ -7,7 +7,7 @@
  *   headline     {string}   Bold roast headline (plain text; italic span goes around `accentWord`)
  *   accentPhrase {string}   The phrase inside the headline that gets the neon gradient
  *   paragraphs   {string[]} Array of roast body paragraphs
- *   onShare      {function}
+ *   onShare      {function} Copies promo text to clipboard and saves a screenshot
  *   onRoastAgain {function}
  */
 export default function RoastContent({
@@ -20,7 +20,6 @@ export default function RoastContent({
     "If your wallet was a person, it would be the guy who tries to pay for a Tesla with expired coupons. Stop checking the charts; they aren't going up. They're just flatlining out of sheer embarrassment.",
   ],
   onShare,
-  onScreenshot,
   onRoastAgain,
 }) {
   return (
@@ -72,19 +71,7 @@ export default function RoastContent({
           >
             share
           </span>
-          Share on X
-        </button>
-        <button
-          onClick={onScreenshot}
-          className="w-full sm:w-auto px-10 py-5 bg-surface-container-high text-on-surface font-headline font-black uppercase tracking-tighter rounded-full text-lg hover:scale-105 transition-all flex items-center justify-center gap-3"
-        >
-          <span
-            className="material-symbols-outlined"
-            style={{ fontVariationSettings: "'FILL' 1" }}
-          >
-            photo_camera
-          </span>
-          Save Screenshot
+          Share
         </button>
         <button
           onClick={onRoastAgain}
