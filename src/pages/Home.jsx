@@ -68,7 +68,7 @@ export default function Home({ onNavigateToResult, onNavigateHome }) {
               <RoastButton onClick={handleRoast} />
             </div>
             <a href="https://x.com/obiajulu_m">
-              <p className="mt-8 text-center font-body text-sm text-outline italic">
+              <p className="mt-8 text-center font-body text-sm text-red-500 italic underline">
                 My creator is jobless, please hire him :D
               </p>
             </a>
