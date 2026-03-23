@@ -69,7 +69,7 @@ export default function Home({ onNavigateToResult, onNavigateHome }) {
             </div>
             <a href="https://x.com/obiajulu_m">
               <p className="mt-8 text-center font-body text-sm text-outline italic">
-                The creator is jobless, please hire him :D
+                My creator is jobless, please hire him :D
               </p>
             </a>
           </div>
